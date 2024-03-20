@@ -11,6 +11,7 @@ _cgo_defun.c
 _cgo_gotypes.go
 _cgo_export.*
 _testmain.go
+*.exe
 *.exe~
 *.test
 *.prof
@@ -34,3 +35,4 @@ _testmain.go
 *.local.yml
 dumped_hertz_remote_config.json
 /data
+/build
