@@ -1,0 +1,1 @@
+docker run -d -p 8081:80 -v ./data:/app/data go-pic-bed

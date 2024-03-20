@@ -1,0 +1,49 @@
+{
+    "schemes": [
+        "http"
+    ],
+    "swagger": "2.0",
+    "info": {
+        "description": "go pic bed",
+        "title": "go-pic-bed",
+        "contact": {
+            "name": "murInJ",
+            "url": "https://github.com/murInJ/go-pic-bed"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "0.0.1"
+    },
+    "host": "localhost:8080",
+    "basePath": "/",
+    "paths": {
+        "/upload/multiple": {
+            "post": {
+                "description": "该处理器用于接收并处理前端通过表单提交的多个文件，完成文件存储并将上传成功的响应信息（包括文件名和访问URL）以JSON格式返回。",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "处理多个文件上传请求的摘要信息",
+                "responses": {}
+            }
+        },
+        "/upload/single": {
+            "post": {
+                "description": "该处理器用于接收并处理前端通过表单提交的单个文件，完成文件存储和上传成功响应的生成。",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "处理单个文件上传请求的摘要信息",
+                "responses": {}
+            }
+        }
+    }
+}

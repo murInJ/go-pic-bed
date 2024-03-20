@@ -15,7 +15,15 @@ type Config struct {
 	FS struct {
 		Path string `json:"path"`
 		Root string `json:"root"`
-	}
+	} `json:"fs"`
+	Registry struct {
+		Able        bool   `json:"able"`
+		Host        string `json:"host"`
+		Port        int    `json:"port"`
+		User        string `json:"user"`
+		Passwd      string `json:"passwd"`
+		ServiceName string `json:"service_name"`
+	} `json:"registry"`
 	// DB struct {
 	// 	User     string `json:"user"`
 	// 	Password string `json:"password"`
@@ -36,7 +44,7 @@ func NewDefaultConfig() *Config {
 			Port int    `json:"port"` // 服务器监听端口
 			Host string `json:"host"` // 服务器绑定地址
 		}{
-			Port: 8080,      // 默认监听端口为8080
+			Port: 80,        // 默认监听端口为8080
 			Host: "0.0.0.0", // 默认绑定所有网络接口
 		},
 		FS: struct {
@@ -45,6 +53,21 @@ func NewDefaultConfig() *Config {
 		}{
 			Path: "/pic",
 			Root: "./data",
+		},
+		Registry: struct {
+			Able        bool   `json:"able"`
+			Host        string `json:"host"`
+			Port        int    `json:"port"`
+			User        string `json:"user"`
+			Passwd      string `json:"passwd"`
+			ServiceName string `json:"service_name"`
+		}{
+			Able:        false,
+			Host:        "127.0.0.1",
+			Port:        6379,
+			User:        "root",
+			Passwd:      "123456",
+			ServiceName: "pic-bed/pic-bed",
 		},
 	}
 }
