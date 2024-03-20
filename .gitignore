@@ -35,4 +35,6 @@ _testmain.go
 *.local.yml
 dumped_hertz_remote_config.json
 /data
-go-pic-bed
+build/go-pic-bed_windows.exe
+build/go-pic-bed_macos
+build/go-pic-bed_linux
