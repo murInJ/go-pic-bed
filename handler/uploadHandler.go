@@ -10,6 +10,13 @@ import (
 	u "github.com/murInJ/go-pic-bed/utils"
 )
 
+// SingleFile 处理单个文件上传的handler函数。
+//
+// @Summary 处理单个文件上传请求的摘要信息
+// @Description 该处理器用于接收并处理前端通过表单提交的单个文件，完成文件存储和上传成功响应的生成。
+// @Accept application/json
+// @Produce application/json
+// @Router /upload/single [post]
 func SingleFile(c *app.RequestContext) {
 	file, err := c.FormFile("file")
 	if err != nil {
@@ -27,6 +34,13 @@ func SingleFile(c *app.RequestContext) {
 	})
 }
 
+// MultiFile 处理多个文件上传的handler函数。
+//
+// @Summary 处理多个文件上传请求的摘要信息
+// @Description 该处理器用于接收并处理前端通过表单提交的多个文件，完成文件存储并将上传成功的响应信息（包括文件名和访问URL）以JSON格式返回。
+// @Accept multipart/form-data
+// @Produce application/json
+// @Router /upload/multiple [post]
 func MultiFile(c *app.RequestContext) {
 	// Multipart form
 	form, err := c.MultipartForm()
