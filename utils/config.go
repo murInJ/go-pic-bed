@@ -15,7 +15,14 @@ type Config struct {
 	FS struct {
 		Path string `json:"path"`
 		Root string `json:"root"`
-	}
+	} `json:"fs"`
+	Registry struct {
+		Able   bool   `json:"able"`
+		Host   string `json:"host"`
+		Port   int    `json:"port"`
+		User   string `json:"user"`
+		Passwd string `json:"passwd"`
+	} `json:"registry"`
 	// DB struct {
 	// 	User     string `json:"user"`
 	// 	Password string `json:"password"`
@@ -45,6 +52,19 @@ func NewDefaultConfig() *Config {
 		}{
 			Path: "/pic",
 			Root: "./data",
+		},
+		Registry: struct {
+			Able   bool   `json:"able"`
+			Host   string `json:"host"`
+			Port   int    `json:"port"`
+			User   string `json:"user"`
+			Passwd string `json:"passwd"`
+		}{
+			Able:   false,
+			Host:   "127.0.0.1",
+			Port:   6379,
+			User:   "root",
+			Passwd: "123456",
 		},
 	}
 }
